@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel='stylesheet' type='text/css' href="Giava-Ferrandina-FSWD30-CodeReview2.css"> 
+		<title>Giava-Ferrandina-FSWD30-CodeReview2</title>
+	</head>
+
+	<body>
+
+		<header>
+			<table>
+				<tr>
+					<td>
+						<img class="img-logo" src="img/cr2-logo.png">
+					</td>
+					<td class="title">
+						Price comparison
+					</td>
+				</tr>
+			</table>
+		</header>
+
+		<div id="container">
+			<table class="table-img">
+				<tr>
+					<td class="td-img">
+						<figure>
+							<img class="image-left" src="img/cr2-amsterdam.jpg">
+							<figcaption>
+								<table class="table-desc">
+									<tr>
+										<td class ="td-top-left">
+											<p id="first"></p>
+										</td>
+										<td class="td-top-right">
+											<p id="price-amsterdam">Price</p>
+										</td>
+									</tr>
+									<tr>
+										<td class="td-bottom-left">
+											<p id="second"></p>
+										</td>
+										<td class="td-bottom-right">
+											Average price
+										</td>
+									</tr>
+								</table>
+							</figcaption>
+						</figure>
+					</td>
+					<td class="td-img">
+					 	<figure>
+							<img class="image-right" src="img/cr2-london.jpg">
+							<figcaption>
+								<table class="table-desc">
+									<tr>
+										<td class="td-top-left">
+											<p id="third"></p>
+										</td>
+										<td class="td-top-right">
+											<p id="price-london"></p>
+										</td>
+									</tr>
+									<tr>
+										<td class="td-bottom-left">
+											<p id="fourth"></p>
+										</td>
+										<td class="td-bottom-right">
+											Average price
+										</td>
+									</tr>
+								</table>
+							</figcaption>
+						</figure>
+					</td>
+				</tr>
+			</table>
+
+			<div id ="description">
+				<p><b>Amsterdam</b> will be more affordable than <b>London</b> for the New Year's celebration</p>
+				<p>Difference in price</p>
+			</div>
+
+			<div class="price-difference">
+				<span id="price-difference"></span>
+			</div>
+
+		</div>
+	
+		<script type="text/javascript">
+			
+			function average(first, second, third, fourth){
+				return (first + second + third + fourth) / 4; 
+			}
+			
+			var amsterdam = [1500, 500, 1800, 700];
+			var avAmsterdam = average(amsterdam[0], amsterdam[1], amsterdam[2], amsterdam[3]);
+			document.getElementById("price-amsterdam").innerHTML = avAmsterdam;
+			
+			var london = [2500, 1500, 1000, 900];
+			var avLondon = average(london[0], london[1], london[2], london[3]);
+			document.getElementById("price-london").innerHTML = avLondon;
+
+			var difference =(avLondon - avAmsterdam);
+			difference=( difference + " € " )
+			document.getElementById("price-difference").innerHTML = difference;
+
+
+			var cityname1 = "Amsterdam";
+			document.getElementById("first").innerHTML = cityname1;
+
+			var country1 ="Netherlands";
+			document.getElementById("second").innerHTML = country1;
+
+			var cityname2 ="London";
+			document.getElementById("third").innerHTML = cityname2;
+
+			var country2 ="United Kingdom";
+			document.getElementById("fourth").innerHTML = country2;
+		</script>
+
+	</body>
+</html>
